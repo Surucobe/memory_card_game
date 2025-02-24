@@ -15,7 +15,6 @@ function App() {
 
   const updateScore = () => {
     setScore(score+2)
-    console.log(cardsPicked)
     setCards([])
   }
 
@@ -40,8 +39,6 @@ function App() {
   }
 
   const resetCards = (array) => {
-    console.log(array)
-    console.log(Array.isArray(array))
     array.forEach(elm => {
       elm.found = false
     })
@@ -76,6 +73,7 @@ function App() {
 
   const handleNewCards = (n) => {
     fetchInfo(setState, n)
+    setScore(0)
   }
 
   return (
