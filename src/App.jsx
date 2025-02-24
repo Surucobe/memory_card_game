@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
 
-import { fetchInfo, arrayReorganization } from './utils/utils'
+import { fetchInfo } from './utils/utils'
 
 import Card from './components/card/card'
 import ScoreBoard from './components/score_board/scoreBoard'
@@ -74,10 +74,15 @@ function App() {
     fetchInfo(setState, 5)
   }, [])
 
+  const handleNewCards = (n) => {
+    fetchInfo(setState, n)
+  }
+
   return (
     <>
       <ScoreBoard 
         score={score}
+        callback={handleNewCards}
       />
 
       <div className='card_container'>
